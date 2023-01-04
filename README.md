@@ -1,4 +1,4 @@
-# Uchile Edx Login
+# REDIFD Logout
 ![https://github.com/eol-uchile/redfid_logout/actions](https://github.com/eol-uchile/redfid_logout/workflows/Python%20application/badge.svg)
 
 # Install App
