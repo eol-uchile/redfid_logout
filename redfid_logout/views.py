@@ -31,4 +31,5 @@ class RedfidLogoutPost(View):
             logger.info("RedfidLogoutPost - logout user: {}".format(request.user))
         else:
             logger.info("RedfidLogoutPost - anonymous user")
-        return HttpResponse()
+        redirect_url = configuration_helpers.get_value('REDFID_REDIRECT_POST_URL', settings.REDFID_REDIRECT_POST_URL)
+        return HttpResponseRedirect(redirect_url)

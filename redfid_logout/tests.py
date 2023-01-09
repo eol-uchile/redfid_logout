@@ -60,4 +60,9 @@ class TestRedfidLogoutPost(TestCase):
 
     def test_logout_post(self):
         result = self.client.post(reverse('redfid_logout:logout_post'))
-        self.assertEqual(result.status_code, 200)
+        self.assertEqual(result.status_code, 302)
+        
+        request = urllib.parse.urlparse(result.url)
+        args = urllib.parse.parse_qs(request.query)
+
+        self.assertEqual(request.netloc, 'www.redfid.cl')
